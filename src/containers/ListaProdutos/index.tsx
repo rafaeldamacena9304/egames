@@ -1,28 +1,48 @@
 import { Produto } from "../../components/Produto"
 import * as style from './styles'
-import styles from '../../globalStyle.module.css'
-import { Game } from "../../models/Game"
+import { Game } from "../../pages/Home"
 
 export interface ListaProdutosProps{
     titulo: string
-    backgroundColor: 'cinza' | 'preto'
+    $backgroundColor: 'cinza' | 'preto'
     games: Game[]
 }
 
 export const ListaProdutos = (props: ListaProdutosProps) => {
+    const formatarPreco = (preco: number) => {
+        return new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+        }).format(preco)
+    }
+
+    const getGameInfos = (game: Game) => {
+        const tags = [];
+
+        if (game.release_date) {
+            tags.push(game.release_date)
+        }
+        if (game.prices.discount){
+            tags.push(`${game.prices.discount}%`)
+        }
+        if(game.prices.current){
+            tags.push(formatarPreco(game.prices.current))
+        }
+        return tags
+    } 
 
     return(
-        <style.ListaProdutosContainer backgroundColor={props.backgroundColor}>
-            <div className={styles.container}>
+        <style.ListaProdutosContainer $backgroundColor={props.$backgroundColor}>
+            <div className="container">
                 <style.Titulo>{props.titulo}</style.Titulo>
                 <style.ListaProdutos>
                     {props.games.map(game => (
-                        <li>
+                        <li key={game.id}>
                             <Produto
-                                key={game.id}
-                                categoria={game.categoria} descricao={game.descricao}
-                                imagem={game.imagem} titulo={game.titulo}
-                                infos={game.infos} sistema={game.sistema}
+                                id={game.id}
+                                categoria={game.details.category} descricao={game.description}
+                                imagem={game.media.thumbnail} titulo={game.name}
+                                infos={getGameInfos(game)} sistema={game.details.system}
                             />
                         </li>
                     ))}

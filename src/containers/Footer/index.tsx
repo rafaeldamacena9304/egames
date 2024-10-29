@@ -1,10 +1,9 @@
-import styles from '../../globalStyle.module.css'
-
+import * as style from  "./styles"
 export const Footer = () => {
 
     return(
-        <footer>
-            <div className={styles.container}>
+        <style.Footer>
+            <div className="container">
                 <div>
                     <h4>
                         Categorias
@@ -12,6 +11,6 @@ export const Footer = () => {
                 </div>
                 <p>&copy; EPLAY 2024 - Todos os direitos reservados</p>
             </div>
-        </footer>
+        </style.Footer>
     )
 }

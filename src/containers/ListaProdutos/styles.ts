@@ -4,10 +4,10 @@ import { Produto } from "../../components/Produto/styles";
 
 export const ListaProdutosContainer = styled.section<Omit<ListaProdutosProps, 'titulo' | 'games'>>`
     padding:32px 0;
-    background-color: ${props => props.backgroundColor === 'preto' ? 'var(--preto)' : 'var(--cinza)'};
+    background-color: ${props => props.$backgroundColor === 'preto' ? 'var(--preto)' : 'var(--cinza)'};
 
     ${Produto}{
-        background-color: ${props => props.backgroundColor === 'preto' ? 'var(--cinza)' : 'var(--preto)'};
+        background-color: ${props => props.$backgroundColor === 'preto' ? 'var(--cinza)' : 'var(--preto)'};
     }
 `
 export const ListaProdutos = styled.ul`
