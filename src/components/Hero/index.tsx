@@ -17,9 +17,10 @@ export const Hero = ({game}: HeroProps) => {
                 </div>
                 <style.PricesAndCta>
                     <h2>{game.name}</h2>
-                    <p>De: <s>R${game.prices.old}</s></p>
-                    <p>Por: R${game.prices.current}</p>
-                    <style.Button>Adicionar ao carrinho</style.Button>
+                    {game.prices.old && ( <p>De: <s>R${game.prices.old}</s></p>)}
+                    {game.prices.current && (<p>Por: R${game.prices.current}</p>)}
+                    
+                    {game.prices.current && (<style.Button>Adicionar ao carrinho</style.Button>)}
                 </style.PricesAndCta>
             </div>
         </style.HeroContainer>

@@ -6,10 +6,19 @@ export const Produto = styled(Link)`
     background-color:var(--cinza);
     border-radius:8px;
     padding:8px;
+    width:100%;
     position:relative;
     height:100%;
     text-decoration:none;
-    color:var(--branco)
+    color:var(--branco);
+    display:block;
+
+    &:hover{
+        transform:scale(1.05);
+        transition: all 0.5s;
+        box-shadow:4px 4px 4px rgba(0,0,0,0.5);
+        cursor:pointer;
+    }
     
     ${Tag}{
         margin-right:8px;

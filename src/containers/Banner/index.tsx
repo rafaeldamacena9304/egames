@@ -27,7 +27,7 @@ export const Banner = () => {
                 <div>
                     <style.Titulo>{currentGame?.name}</style.Titulo>
                     <style.Precos>
-                        De <s>R${currentGame?.prices.old}</s> <br/>
+                        {currentGame?.prices.old && (<>De <s>R${currentGame?.prices.old}</s> <br/></>)}
                         Por apenas R${currentGame?.prices.current}
                     </style.Precos>
                 </div>

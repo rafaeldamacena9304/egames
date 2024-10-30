@@ -1,4 +1,3 @@
-import { Game } from "../../pages/Home"
 import { Tag } from "../Tag"
 import * as style from './styles'
 
@@ -21,7 +20,7 @@ export const Produto = (props: ProdutoProps) => {
     }
 
     return(
-        <style.Produto to={`/produto/${props.id}`}>
+        <style.Produto  to={`/produto/${props.id}`}>
             <img src={props.imagem} alt=""/>
             <style.Infos>
                 {props.infos.map(info => <Tag key={info}>{info}</Tag>)}
