@@ -1,6 +1,12 @@
+//Dependencias
+import { useDispatch } from "react-redux"
+import { add } from '../../redux/reducers/cart' 
+
 //Componentes
 import { Game } from "../../pages/Home"
 import { Tag } from "../Tag"
+
+//Estilos
 import * as style from "./styles"
       
 interface HeroProps{
@@ -8,6 +14,12 @@ interface HeroProps{
 }
 
 export const Hero = ({game}: HeroProps) => {
+
+    const dispatch = useDispatch()
+
+    const adicionarAoCarrinho = () => {
+        dispatch(add(game))
+    }
 
     return(
         <style.HeroContainer style={{ backgroundImage: `url(${game.media.cover})`}}>
@@ -21,7 +33,7 @@ export const Hero = ({game}: HeroProps) => {
                     {game.prices.old && ( <p>De: <s>R${game.prices.old}</s></p>)}
                     {game.prices.current && (<p>Por: R${game.prices.current}</p>)}
                     
-                    {game.prices.current && (<style.Button>Adicionar ao carrinho</style.Button>)}
+                    {game.prices.current && (<style.Button onClick={adicionarAoCarrinho}>Adicionar ao carrinho</style.Button>)}
                 </style.PricesAndCta>
             </div>
         </style.HeroContainer>

@@ -1,8 +1,12 @@
+//Dependencias
+import { useGetGameQuery } from "../../services/api"
+import { useParams } from "react-router-dom"
+
+//Componentes
 import { Galeria } from "../../components/Galeria"
 import { Hero } from "../../components/Hero"
 import { Section } from "../../containers/Section"
-import { useParams } from "react-router-dom"
-import { useGetGameQuery } from "../../services/api"
+import { Header } from "../../containers/Header"
 
 export const ProdutoPage = () => {
     const { id } = useParams()
@@ -15,6 +19,9 @@ export const ProdutoPage = () => {
 
     return(
         <>
+            <div className="container">
+                <Header/>
+            </div>
             <Hero game={game}/>
             <Section titulo="Sobre o jogo" backgroundColor="preto">
                 <p>{game.description}</p>
