@@ -1,6 +1,9 @@
+//Componentes
 import { Produto } from "../../components/Produto"
-import * as style from './styles'
 import { Game } from "../../pages/Home"
+
+//Estilos
+import * as style from './styles'
 
 export interface ListaProdutosProps{
     titulo: string

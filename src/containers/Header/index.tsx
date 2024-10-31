@@ -1,9 +1,14 @@
-import * as style from './styles'
-
-import logo from '../../assets/images/logo.svg'
-import carrinho from '../../assets/images/carrinho.svg'
+//Dependencias
 import { useDispatch } from 'react-redux'
 import {open} from '../../redux/reducers/cart'
+
+//Estilos
+import * as style from './styles'
+
+//Imagens
+import logo from '../../assets/images/logo.svg'
+import carrinho from '../../assets/images/carrinho.svg'
+
 
 export const Header = () => {
 
