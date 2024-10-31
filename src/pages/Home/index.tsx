@@ -4,9 +4,9 @@ import { Header } from "../../containers/Header";
 import { ListaProdutos } from "../../containers/ListaProdutos";
 //Styles
 import { Footer } from "../../containers/Footer";
-import { useEffect, useState } from "react";
 
 import { ItemGaleria } from '../../components/Galeria/index'
+import { useGetEmBreveQuery, useGetPromocoesQuery } from "../../services/api";
 
 
 export interface Game {
@@ -35,30 +35,23 @@ export interface Game {
 
 export const Home = () => {
 
-    const [ promocoes, setPromocoes ] = useState<Game[]>([])
-    const [ emBreve, setEmbreve ] = useState<Game[]>([])
+    const { data: emBreve } = useGetEmBreveQuery();
+    const { data: promocoes } = useGetPromocoesQuery();
 
-    useEffect( () => {
-        fetch('https://fake-api-tau.vercel.app/api/eplay/promocoes')
-        .then(resposta => resposta.json())
-        .then(resposta => setPromocoes(resposta))
-
-        fetch('https://fake-api-tau.vercel.app/api/eplay/em-breve')
-        .then(resposta => resposta.json())
-        .then(resposta => setEmbreve(resposta))
-    }, [] )
-
+    if (promocoes && emBreve){
+        return(
+            <>
+            <div className="container">
+            <Header/>
+            </div>
+            <Banner/>
+            <ListaProdutos games={promocoes} titulo="Promoções" $backgroundColor="cinza"/>
+            <ListaProdutos games={emBreve} titulo="Em breve" $backgroundColor="preto"/>
+            <Footer/>
+            </>
+        )
+    }
     return(
-        <>
-        <div className="container">
-        <Header/>
-        </div>
-        <Banner/>
-        <ListaProdutos games={promocoes} titulo="Promoções" $backgroundColor="cinza"/>
-        <ListaProdutos games={emBreve} titulo="Em breve" $backgroundColor="preto"/>
-        <Footer/>
-        </>
+        <h4>Carregando...</h4>
     )
-
-
 }

@@ -22,10 +22,11 @@ export const GlobalStyle = createGlobalStyle`
         font-style: normal;
     }
     *, *::after, *::before{
-    font-family:'Geist';
-    padding:0;
-    margin:0;
-    box-sizing:border-box;
+        font-family:'Geist';
+        padding:0;
+        margin:0;
+        box-sizing:border-box;
+        list-style: none;
     }
 
 

@@ -1,18 +1,12 @@
 import * as style from './styles'
 import { Tag } from '../../components/Tag'
 import { Button } from '../../components/Button'
-import { Game } from '../../pages/Home'
-import { useEffect, useState } from 'react'
+import { useGetJogoDestaqueQuery } from '../../services/api'
 
 export const Banner = () => {
+
+    const { data: currentGame } = useGetJogoDestaqueQuery()
     
-    const [currentGame, setCurrentGame] = useState<Game>();
-    
-    useEffect(() => {
-        fetch('https://fake-api-tau.vercel.app/api/eplay/destaque')
-        .then(resposta => resposta.json())
-        .then(resposta => setCurrentGame(resposta))
-    }, [])
 
     if (!currentGame) {
         return <h3>Carregando...</h3>
