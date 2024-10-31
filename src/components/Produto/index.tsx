@@ -1,4 +1,7 @@
+//Componentes
 import { Tag } from "../Tag"
+
+//Estilos
 import * as style from './styles'
 
 interface ProdutoProps{

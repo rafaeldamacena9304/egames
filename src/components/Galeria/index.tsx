@@ -1,6 +1,10 @@
+//Dependencias
 import { useState } from 'react'
 
+//Estilo
 import * as style from './styles'
+
+//Imagens
 import zoom from '../../assets/images/zoom.png'
 import play from '../../assets/images/play.png'
 import close from '../../assets/images/close.png'

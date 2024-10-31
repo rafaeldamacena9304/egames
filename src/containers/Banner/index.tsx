@@ -1,7 +1,13 @@
-import * as style from './styles'
-import { Tag } from '../../components/Tag'
-import { Button } from '../../components/Button'
+//Dependencias
 import { useGetJogoDestaqueQuery } from '../../services/api'
+
+//Componentes
+import { Button } from '../../components/Button'
+import { Tag } from '../../components/Tag'
+
+//Estilos
+import * as style from './styles'
+
 
 export const Banner = () => {
 

@@ -1,4 +1,3 @@
-import { ReactElement } from 'react'
 import * as style from './styles'
 
 export interface TagProps{

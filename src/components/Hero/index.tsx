@@ -1,3 +1,4 @@
+//Componentes
 import { Game } from "../../pages/Home"
 import { Tag } from "../Tag"
 import * as style from "./styles"
