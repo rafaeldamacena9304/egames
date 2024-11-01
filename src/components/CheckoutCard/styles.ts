@@ -12,12 +12,10 @@ export const CardContainer = styled.div`
         color:var(--branco);
         margin-bottom:24px;
     }
-    h3{
-        margin:24px 0;
-    }
     p{
         font-size:14px;
         line-height:22px;
+        margin-bottom:24px;
     }
 `
 export const FormRow = styled.div`
@@ -27,12 +25,13 @@ export const FormRow = styled.div`
 `
 export const InputContainer = styled.div`
     flex:auto;
+    margin-bottom:24px;
     
     label{
         display:block;
         margin-bottom:8px;
     }
-    input{
+    input, select{
         font-size:14px;
         background-color:#EEE;
         padding:8px;
