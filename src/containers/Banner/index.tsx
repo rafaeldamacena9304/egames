@@ -13,6 +13,12 @@ export const Banner = () => {
 
     const { data: currentGame } = useGetJogoDestaqueQuery()
     
+    const formatarPreco = (preco: number) => {
+        return new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+        }).format(preco)
+    }
 
     if (!currentGame) {
         return <h3>Carregando...</h3>
@@ -27,11 +33,11 @@ export const Banner = () => {
                 <div>
                     <style.Titulo>{currentGame?.name}</style.Titulo>
                     <style.Precos>
-                        {currentGame?.prices.old && (<>De <s>R${currentGame?.prices.old}</s> <br/></>)}
-                        Por apenas R${currentGame?.prices.current}
+                        {currentGame?.prices.old && (<>De <s>{formatarPreco(currentGame?.prices.old)}</s> <br/></>)}
+                        Por apenas {formatarPreco(currentGame.prices.current ?? 0)}
                     </style.Precos>
                 </div>
-                <Button tipo="link" to={`/produto/${currentGame?.id}`} title="Clique para ver esta oferta">
+                <Button $background="transparente" tipo="link" to={`/produto/${currentGame?.id}`} title="Clique para ver esta oferta">
                     Aproveitar
                 </Button>
             </div>

@@ -9,6 +9,9 @@ export const HeroContainer = styled.div`
     background-position:center;
     padding-top:16px;
 
+    @media (max-width:395px){
+        background-size:cover;
+    }
     .container{
         display:flex;
         flex-direction:column;
@@ -23,6 +26,10 @@ export const PricesAndCta = styled.div`
     width:300px;
     font-weight:bold;
 
+    @media (max-width:395px){
+        background-color:transparent;
+    }
+
     h2{
         font-size:32px;
         margin-bottom:16px;
@@ -35,11 +42,14 @@ export const PricesAndCta = styled.div`
 export const Button = styled.button`
     background-color:var(--verde);
     color:var(--branco);
-    border:2px solid var(--branco);
+    border:none;
     padding:4px 6px;
     border-radius:8px;
     font-size:16px;
     font-weight:bold;
     text-decoration:none;
 
+    &:hover{
+        cursor:pointer;
+    }
 `

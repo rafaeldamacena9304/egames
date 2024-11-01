@@ -15,6 +15,10 @@ export const Header = styled.header`
         display:flex;
         align-items: center;
     }
+    
+    @media (max-width:395px){
+        display:none;
+    }
 `
 export const Nav = styled.nav`
     display:flex;

@@ -4,17 +4,19 @@ export const Galeria = styled.ul`
     display:flex;
     align-items: center;
     list-style:none;
+    flex-wrap:wrap;
 `
 export const Item = styled.li`
     margin-right:16px;
     width:150px;
     height:150px;
     position:relative;
+    margin-bottom:16px;
 
     & > img{
         border:2px solid var(--branco);
         border-radius:8px;
-        width:100%; height:100%;
+        width:100%;
         object-fit: cover;
     }
 `
@@ -58,11 +60,14 @@ export const PopupContent = styled.div`
 
     & > img{
         width:100%;
-        height:100%;
     }
     & > iframe{
         width:100%;
-        height:100%;
+    }
+
+    @media (max-width:768px){
+        width:80%;
+        height:50%;
     }
 `
 export const PopupHeader = styled.header`

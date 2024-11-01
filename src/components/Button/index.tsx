@@ -6,6 +6,7 @@ interface ButtonProps{
     children: string
     to?: string
     onClick?: () => void
+    $background?: string
 }
 
 export const Button = (props: ButtonProps) => {

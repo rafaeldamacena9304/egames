@@ -7,6 +7,7 @@ import { Categorias } from './pages/Categorias'
 import { ProdutoPage } from './pages/ProdutoPage';
 import { GlobalStyle } from './globalStyle';
 import { Carrinho } from './components/Carrinho';
+import { Checkout } from './pages/Checkout';
 
 
 const rotas = createBrowserRouter([
@@ -21,6 +22,10 @@ const rotas = createBrowserRouter([
   {
     path:'/produto/:id',
     element: <ProdutoPage />
+  },
+  {
+    path:'/checkout',
+    element: <Checkout /> 
   }
 
 ])

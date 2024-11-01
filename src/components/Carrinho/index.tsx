@@ -1,7 +1,7 @@
 //Dependencias
 import { useDispatch, useSelector } from "react-redux"
 
-import { close } from '../../redux/reducers/cart'
+import { close, remove } from '../../redux/reducers/cart'
 
 //Types
 import { RootReducer } from "../../redux/store"
@@ -21,11 +21,29 @@ export const Carrinho = () => {
 
     const dispatch = useDispatch();
 
-    const { isOpen } = useSelector((state: RootReducer) => state.cart)
+    const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
     
     const fecharCarrinho = () => {
         dispatch(close())
     }
+
+    const removeItem = (id: number) => {
+        dispatch(remove(id))
+    }
+
+    const formatarPreco = (preco: number) => {
+        return new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+        }).format(preco)
+    }
+    
+    const calcularPrecoTotal = () => {
+        return items.reduce((acumulador, valorAtual) => {
+            return (acumulador += valorAtual.prices.current ?? 0)
+        }, 0)
+    }
+
 
     if (isOpen) {
         return(
@@ -33,20 +51,21 @@ export const Carrinho = () => {
             <Overlay onClick={fecharCarrinho}/>
             <SideBar>
                 <ul>
-                    <ItemCarrinho>
-                        <img src="https://via.placeholder.com/200x200" alt="" />
-                        <div>
-                            <h3>Nome do jogo</h3>
-                            <Tag>Categoria</Tag>
-                            <Tag>Sistema</Tag>
-                            <span>R$150,00</span>
-                        </div>
-                        <img className="close" src={closeButton} alt="" />
-                    </ItemCarrinho>
+                    {items.map(item => 
+                        <ItemCarrinho key={item.id}>
+                            <img src={item.media.thumbnail} alt=""/>
+                            <div>
+                                <h3>{item.name}</h3>
+                                <Tag>{item.details.category}</Tag>
+                                <Tag>{item.details.system}</Tag>
+                                <span>{formatarPreco(item.prices.current!)}</span>
+                            </div>
+                            <img onClick={() => removeItem(item.id)} className="close" src={closeButton} alt="" />
+                        </ItemCarrinho>)}
                 </ul>
-                <QtdItems>2 jogos no carrinho</QtdItems>
+                <QtdItems>{items.length} jogos no carrinho</QtdItems>
                 <Precos>
-                    total de R$250,00 <br />
+                    total de {formatarPreco(calcularPrecoTotal())} <br />
                     <span>Em até 6x sem juros</span>
                 </Precos>
                 <Button tipo="button" title="Clique aqui para continuar com a compra">

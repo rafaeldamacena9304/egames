@@ -16,7 +16,18 @@ export const cartSlice = createSlice({
     initialState,
     reducers: {
         add: (state, action: PayloadAction<Game>) => {
-            state.items.push(action.payload)
+            const game = state.items.find(item => item.id === action.payload.id)
+            
+            if (!game){
+                state.items.push(action.payload)
+            } else{
+                alert('Jogo já adicionado ao carrinho')
+            }
+            
+        },
+        remove: (state, action: PayloadAction<Number>) => {
+            state.items = state.items.filter((item) => item.id !== action.payload)
+            
         },
         open: (state) => {
             state.isOpen = true
@@ -27,4 +38,4 @@ export const cartSlice = createSlice({
     }
 })
 
-export const { add, open, close } = cartSlice.actions
+export const { add, open, close, remove } = cartSlice.actions

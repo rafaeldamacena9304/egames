@@ -3,10 +3,10 @@ import { Produto } from "../../components/Produto/styles";
 import { SectionProps } from ".";
 export const Container = styled.section<Omit<SectionProps, 'titulo' | 'games'>>`
     padding:32px 0;
-    background-color: ${props => props.backgroundColor === 'preto' ? 'var(--preto)' : 'var(--cinza)'};
+    background-color: ${props => props.$backgroundColor === 'preto' ? 'var(--preto)' : 'var(--cinza)'};
 
     ${Produto}{
-        background-color: ${props => props.backgroundColor === 'preto' ? 'var(--cinza)' : 'var(--preto)'};
+        background-color: ${props => props.$backgroundColor === 'preto' ? 'var(--cinza)' : 'var(--preto)'};
     }
 
     p{

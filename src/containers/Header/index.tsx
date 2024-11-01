@@ -1,17 +1,23 @@
 //Dependencias
-import { useDispatch } from 'react-redux'
-import {open} from '../../redux/reducers/cart'
+import { useDispatch, useSelector } from 'react-redux'
+import { open } from '../../redux/reducers/cart'
+
+//Types
 
 //Estilos
 import * as style from './styles'
+import { RootReducer } from '../../redux/store'
+
 
 //Imagens
 import logo from '../../assets/images/logo.svg'
 import carrinho from '../../assets/images/carrinho.svg'
+import { Link } from 'react-router-dom'
 
 
 export const Header = () => {
 
+    const { items } = useSelector((state: RootReducer) => state.cart)
 
     const dispatch = useDispatch()
 
@@ -22,7 +28,10 @@ export const Header = () => {
 return(
     <style.Header>
         <div>
-            <img src={logo} alt="EPLAY logo"/>
+            <Link to="/">
+                <img src={logo} alt="EPLAY logo"/>
+            </Link>
+            
             <style.Nav>
                 <style.aLink to="/categorias">Categorias</style.aLink>
                 <style.aLink to="#">Novidades</style.aLink>
@@ -30,7 +39,7 @@ return(
             </style.Nav>
         </div>
         <style.CarrinhoLink onClick={abrirCarrinho} to="#">
-            0 - produto(s)
+            {items.length} - produto(s)
             <img src={carrinho} alt="carrinho de compras eplay" />
         </style.CarrinhoLink>
     </style.Header>

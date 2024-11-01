@@ -23,10 +23,10 @@ export const ProdutoPage = () => {
                 <Header/>
             </div>
             <Hero game={game}/>
-            <Section titulo="Sobre o jogo" backgroundColor="preto">
+            <Section titulo="Sobre o jogo" $backgroundColor="preto">
                 <p>{game.description}</p>
             </Section>
-            <Section titulo="Mais detalhes" backgroundColor="cinza">
+            <Section titulo="Mais detalhes" $backgroundColor="cinza">
                 <p>
                     <b>Plataforma</b>: {game.details.system} <br />
                     <b>Desenvolvedor</b>: {game.details.developer} <br />
@@ -34,7 +34,7 @@ export const ProdutoPage = () => {
                     <b>Idiomas</b>: {game.details.languages.join(', ')}
                 </p>
             </Section>
-            <Section titulo="Galeria" backgroundColor="preto">
+            <Section titulo="Galeria" $backgroundColor="preto">
                 <Galeria nome={game.name} capaPadrao={game.media.cover} itens={game.media.gallery}/>
             </Section>
         </>

@@ -1,6 +1,6 @@
 //Dependencias
 import { useDispatch } from "react-redux"
-import { add } from '../../redux/reducers/cart' 
+import { add, open } from '../../redux/reducers/cart' 
 
 //Componentes
 import { Game } from "../../pages/Home"
@@ -18,7 +18,15 @@ export const Hero = ({game}: HeroProps) => {
     const dispatch = useDispatch()
 
     const adicionarAoCarrinho = () => {
-        dispatch(add(game))
+        dispatch(add(game));
+        dispatch(open())
+    }
+
+    const formatarPreco = (preco: number) => {
+        return new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+        }).format(preco)
     }
 
     return(
@@ -30,8 +38,8 @@ export const Hero = ({game}: HeroProps) => {
                 </div>
                 <style.PricesAndCta>
                     <h2>{game.name}</h2>
-                    {game.prices.old && ( <p>De: <s>R${game.prices.old}</s></p>)}
-                    {game.prices.current && (<p>Por: R${game.prices.current}</p>)}
+                    {game.prices.old && ( <p>De: <s>{formatarPreco(game.prices.old)}</s></p>)}
+                    {game.prices.current && (<p>Por: {formatarPreco(game.prices.current)}</p>)}
                     
                     {game.prices.current && (<style.Button onClick={adicionarAoCarrinho}>Adicionar ao carrinho</style.Button>)}
                 </style.PricesAndCta>

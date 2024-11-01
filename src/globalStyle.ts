@@ -38,5 +38,9 @@ export const GlobalStyle = createGlobalStyle`
         margin:0 auto;
         width:100%;
         max-width:1024px;
+        
+        @media (max-width:768px){
+            width:80%;
+        }
     }
 `

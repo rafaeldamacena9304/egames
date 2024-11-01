@@ -15,6 +15,13 @@ export const ListaProdutos = styled.ul`
     grid-template-columns:1fr 1fr 1fr 1fr;
     gap:24px;
     list-style:none;
+
+    @media (max-width:768px){
+        grid-template-columns:1fr 1fr;
+    }
+    @media (max-width:395px){
+        grid-template-columns:1fr;
+    }
 `
 
 export const Titulo = styled.h2`
