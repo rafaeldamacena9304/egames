@@ -13,6 +13,7 @@ import { RootReducer } from '../../redux/store'
 import logo from '../../assets/images/logo.svg'
 import carrinho from '../../assets/images/carrinho.svg'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 
 export const Header = () => {
@@ -21,13 +22,26 @@ export const Header = () => {
 
     const dispatch = useDispatch()
 
+    const [menuResponsivoVisivel, setMenuResponsivoVisivel] = useState(false)
+
     const abrirCarrinho = () => {
         dispatch(open())
     }
 
 return(
     <style.Header>
+            <style.MenuResponsivo menuResponsivoVisivel={menuResponsivoVisivel}>
+                <style.aLink to="/categorias">Categorias</style.aLink>
+                <style.aLink to="#">Novidades</style.aLink>
+                <style.aLink to="#">Promoções</style.aLink>
+            </style.MenuResponsivo>
         <div>
+            <style.Hamburger onClick={() => setMenuResponsivoVisivel(!menuResponsivoVisivel)}>
+                <span />
+                <span />
+                <span />
+            </style.Hamburger>
+
             <Link to="/">
                 <img src={logo} alt="EPLAY logo"/>
             </Link>
@@ -39,7 +53,7 @@ return(
             </style.Nav>
         </div>
         <style.CarrinhoLink onClick={abrirCarrinho} to="#">
-            {items.length} - produto(s)
+            {items.length} <span>- produto(s)</span>
             <img src={carrinho} alt="carrinho de compras eplay" />
         </style.CarrinhoLink>
     </style.Header>
