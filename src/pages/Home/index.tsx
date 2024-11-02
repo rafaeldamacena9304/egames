@@ -1,9 +1,9 @@
 //Componentes
-import { Banner } from "../../containers/Banner";
-import { Header } from "../../containers/Header";
-import { ListaProdutos } from "../../containers/ListaProdutos";
+import { Banner } from "../../components/Banner";
+import { Header } from "../../components/Header";
+import { ListaProdutos } from "../../components/ListaProdutos";
 //Styles
-import { Footer } from "../../containers/Footer";
+import { Footer } from "../../components/Footer";
 
 import { ItemGaleria } from '../../components/Galeria/index'
 import { useGetEmBreveQuery, useGetPromocoesQuery } from "../../services/api";

@@ -5,8 +5,8 @@ import { useParams } from "react-router-dom"
 //Componentes
 import { Galeria } from "../../components/Galeria"
 import { Hero } from "../../components/Hero"
-import { Section } from "../../containers/Section"
-import { Header } from "../../containers/Header"
+import { Section } from "../../components/Section"
+import { Header } from "../../components/Header"
 
 export const ProdutoPage = () => {
     const { id } = useParams()

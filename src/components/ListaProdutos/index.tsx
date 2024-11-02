@@ -1,5 +1,5 @@
 //Componentes
-import { Produto } from "../../components/Produto"
+import { Produto } from "../Produto"
 import { Game } from "../../pages/Home"
 
 //Estilos

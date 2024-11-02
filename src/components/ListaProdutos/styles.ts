@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ListaProdutosProps } from ".";
-import { Produto } from "../../components/Produto/styles";
+import { Produto } from "../Produto/styles";
 
 export const ListaProdutosContainer = styled.section<Omit<ListaProdutosProps, 'titulo' | 'games'>>`
     padding:32px 0;

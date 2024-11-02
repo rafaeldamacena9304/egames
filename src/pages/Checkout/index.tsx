@@ -5,8 +5,8 @@ import { useState } from "react"
 import { Button } from "../../components/Button"
 import { CheckoutCard } from "../../components/CheckoutCard"
 import { FormRow, InputContainer } from "../../components/CheckoutCard/styles"
-import { Header } from "../../containers/Header"
-import { Footer } from "../../containers/Footer/styles"
+import { Header } from "../../components/Header"
+import { Footer } from "../../components/Footer/styles"
 
 //Imagens
 import boleto from '../../assets/images/boleto.png'

@@ -2,8 +2,8 @@
 import { useGetJogoDestaqueQuery } from '../../services/api'
 
 //Componentes
-import { Button } from '../../components/Button'
-import { Tag } from '../../components/Tag'
+import { Button } from '../Button'
+import { Tag } from '../Tag'
 
 //Estilos
 import * as style from './styles'

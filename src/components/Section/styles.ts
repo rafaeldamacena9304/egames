@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Produto } from "../../components/Produto/styles";
+import { Produto } from "../Produto/styles";
 import { SectionProps } from ".";
 export const Container = styled.section<Omit<SectionProps, 'titulo' | 'games'>>`
     padding:32px 0;

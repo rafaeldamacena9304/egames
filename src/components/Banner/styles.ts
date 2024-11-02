@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Tag } from "../../components/Tag/styles";
+import { Tag } from "../Tag/styles";
 
 export const Banner = styled.div`
     width:100%;

@@ -1,7 +1,7 @@
 //Componentes
-import { Header } from "../../containers/Header";
-import { ListaProdutos } from "../../containers/ListaProdutos";
-import { Footer } from "../../containers/Footer";
+import { Header } from "../../components/Header";
+import { ListaProdutos } from "../../components/ListaProdutos";
+import { Footer } from "../../components/Footer";
 //Classes
 import { useGetActionGamesQuery, useGetEsportesGamesQuery, useGetLutaGamesQuery, useGetRpgGamesQuery, useGetSimulacaoGamesQuery } from "../../services/api";
 //Styles
