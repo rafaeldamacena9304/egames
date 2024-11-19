@@ -1,46 +1,60 @@
-# Getting Started with Create React App
+# Egames (Front-end)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Egames é um e-commerce de jogos desenvolvido por mim, utilizando React. O objetivo é proporcionar uma plataforma funcional e intuitiva, onde os usuários podem explorar jogos, filtrar por categorias e gerenciar um carrinho de compras. Este projeto foi criado como parte do meu portfólio para demonstrar minhas habilidades em front-end e boas práticas de desenvolvimento.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## ✨ Funcionalidades
 
-### `npm start`
+- **Catálogo de Jogos**: Exibição de jogos recuperados diretamente de uma API.
+- **Filtragem por Categorias**: Encontre rapidamente os jogos de interesse com filtros dinâmicos.
+- **Carrinho de Compras**: Adicione e visualize os itens que deseja adquirir.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🚀 Tecnologias Utilizadas
 
-### `npm test`
+- **React**: Biblioteca principal para construção da interface.
+- **Redux Toolkit (RTK Query)**: Gerenciamento de estado global e integração com API.
+- **TypeScript**: Tipagem estática para maior robustez e manutenção do código.
+- **Styled Components**: Estilização moderna e modular.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🎯 Objetivo do Projeto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+O Egames foi criado como um portfólio para demonstrar:
+- Conhecimento avançado em **React** e **Redux Toolkit**.
+- Uso de **TypeScript** para desenvolvimento seguro e escalável.
+- Integração de estilização avançada com **styled-components**.
+- Capacidade de consumir APIs externas e exibir dados de maneira eficiente.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🖼️ Preview do Projeto
 
-### `npm run eject`
+![Imagem Demonstrativa](./src/assets/screenshots/1.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Imagem Demonstrativa](./src/assets/screenshots/2.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Imagem Demonstrativa](./src/assets/screenshots/3.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![Imagem Demonstrativa](./src/assets/screenshots/4.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+## 📩 Contato
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Gostou do projeto? Entre em contato comigo!  
+📧 E-mail: [rafaeldamacena9304@gmail.com](mailto:rafaeldamacena9304@gmail.com)  
+🌐 LinkedIn: [Rafael Damacena](https://www.linkedin.com/in/rafaeldamacena9304/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+
+## 🏆 Agradecimentos
+
+A todos que reconhecem e incentivam o uso da tecnologia para proporcionar experiências incríveis e dinâmicas!
+
+---
+
+> Este projeto é parte do meu portfólio para fins educacionais e de demonstração.
