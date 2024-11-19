@@ -7,11 +7,12 @@ interface ButtonProps{
     to?: string
     onClick?: () => void
     $background?: string
+    type?:string
 }
 
 export const Button = (props: ButtonProps) => {
     if (props.tipo === 'button'){
-        return <style.Button title={props.title} onClick={props.onClick} >{props.children}</style.Button>
+        return <style.Button  title={props.title} onClick={props.onClick} >{props.children}</style.Button>
     }
 
     return(

@@ -21,7 +21,7 @@ export const Button = styled.button<{$background?: string}>`
 export const ButtonLink = styled(Link)`
     background-color:transparent;
     color:var(--branco);
-    border:none;
+    border:1px solid var(--branco);
     padding:8px 8px;
     border-radius:8px;
     font-size:16px;

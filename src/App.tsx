@@ -1,5 +1,3 @@
-import { Provider } from 'react-redux';
-import { store } from './redux/store'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { Home } from './pages/Home';
@@ -32,11 +30,11 @@ const rotas = createBrowserRouter([
 
 function App() {
   return (
-    <Provider store={store}>
+    <>
       <GlobalStyle/>
       <RouterProvider router={rotas}/>
       <Carrinho/>
-   </Provider>
+    </>
   );
 }
 

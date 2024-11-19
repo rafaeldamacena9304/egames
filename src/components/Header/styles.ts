@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link'
 
 
 
@@ -33,7 +33,7 @@ export const Nav = styled.nav`
         display:none;
     }
 `
-export const aLink = styled(Link)`
+export const aLink = styled(HashLink)`
     margin-right:16px;
     color:var(--branco);
     text-decoration:none;
@@ -46,7 +46,7 @@ export const CarrinhoLink = styled(aLink)`
         margin-left:16px;
     }
 
-    @media (max-width:395px){
+    @media (max-width:768px){
         span{
             display:none;
         }

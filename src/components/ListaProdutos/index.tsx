@@ -9,6 +9,7 @@ export interface ListaProdutosProps{
     titulo: string
     $backgroundColor: 'cinza' | 'preto'
     games: Game[]
+    id?: string
 }
 
 export const ListaProdutos = (props: ListaProdutosProps) => {
@@ -35,7 +36,7 @@ export const ListaProdutos = (props: ListaProdutosProps) => {
     } 
 
     return(
-        <style.ListaProdutosContainer $backgroundColor={props.$backgroundColor}>
+        <style.ListaProdutosContainer id={props.id}     $backgroundColor={props.$backgroundColor}>
             <div className="container">
                 <style.Titulo>{props.titulo}</style.Titulo>
                 <style.ListaProdutos>

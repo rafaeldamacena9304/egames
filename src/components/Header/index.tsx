@@ -1,7 +1,6 @@
 //Dependencias
 import { useDispatch, useSelector } from 'react-redux'
 import { open } from '../../redux/reducers/cart'
-
 //Types
 
 //Estilos
@@ -32,8 +31,8 @@ return(
     <style.Header>
             <style.MenuResponsivo menuResponsivoVisivel={menuResponsivoVisivel}>
                 <style.aLink to="/categorias">Categorias</style.aLink>
-                <style.aLink to="#">Novidades</style.aLink>
-                <style.aLink to="#">Promoções</style.aLink>
+                <style.aLink to="/#novidades">Novidades</style.aLink>
+                <style.aLink to="/#promocoes">Promoções</style.aLink>
             </style.MenuResponsivo>
         <div>
             <style.Hamburger onClick={() => setMenuResponsivoVisivel(!menuResponsivoVisivel)}>
@@ -48,8 +47,8 @@ return(
             
             <style.Nav>
                 <style.aLink to="/categorias">Categorias</style.aLink>
-                <style.aLink to="#">Novidades</style.aLink>
-                <style.aLink to="#">Promoções</style.aLink>
+                <style.aLink to="/#novidades">Novidades</style.aLink>
+                <style.aLink to="/#promocoes">Promoções</style.aLink>
             </style.Nav>
         </div>
         <style.CarrinhoLink onClick={abrirCarrinho} to="#">

@@ -1,6 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
+    html{
+        scroll-behavior: smooth;
+    }
     :root{
     --branco:#EEE; 
     --cinza:#333;

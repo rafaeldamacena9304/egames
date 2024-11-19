@@ -45,8 +45,8 @@ export const Home = () => {
             <Header/>
             </div>
             <Banner/>
-            <ListaProdutos games={promocoes} titulo="Promoções" $backgroundColor="cinza"/>
-            <ListaProdutos games={emBreve} titulo="Em breve" $backgroundColor="preto"/>
+            <ListaProdutos id="promocoes" games={promocoes} titulo="Promoções" $backgroundColor="cinza"/>
+            <ListaProdutos id="novidades" games={emBreve} titulo="Em breve" $backgroundColor="preto"/>
             <Footer/>
             </>
         )
